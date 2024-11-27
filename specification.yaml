@@ -1,0 +1,120 @@
+openapi: 3.1.0
+info:
+  title: Calculator API
+  description: API for a simple calculator
+  version: 1.0.0
+servers:
+  - url: https://api.calculator.com/v1
+paths:
+  /add:
+    get:
+      summary: Add two numbers
+      parameters:
+        - name: a
+          in: query
+          required: true
+          schema:
+            type: number
+        - name: b
+          in: query
+          required: true
+          schema:
+            type: number
+      responses:
+        '200':
+          description: Result of addition
+          content:
+            application/json:
+              schema:
+                type: number
+  /subtract:
+    get:
+      summary: Subtract two numbers
+      parameters:
+        - name: a
+          in: query
+          required: true
+          schema:
+            type: number
+        - name: b
+          in: query
+          required: true
+          schema:
+            type: number
+      responses:
+        '200':
+          description: Result of subtraction
+          content:
+            application/json:
+              schema:
+                type: number
+  /multiply:
+    get:
+      summary: Multiply two numbers
+      parameters:
+        - name: a
+          in: query
+          required: true
+          schema:
+            type: number
+        - name: b
+          in: query
+          required: true
+          schema:
+            type: number
+      responses:
+        '200':
+          description: Result of multiplication
+          content:
+            application/json:
+              schema:
+                type: number
+  /divide:
+    get:
+      summary: Divide two numbers
+      parameters:
+        - name: a
+          in: query
+          required: true
+          schema:
+            type: number
+        - name: b
+          in: query
+          required: true
+          schema:
+            type: number
+      responses:
+        '200':
+          description: Result of division
+          content:
+            application/json:
+              schema:
+                type: number
+        '400':
+          description: Invalid input or division by zero
+          content:
+            application/json:
+              schema:
+                type: string
+  /is_prime:
+    get:
+      summary: Check if a number is prime
+      parameters:
+        - name: number
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Prime check result
+          content:
+            application/json:
+              schema:
+                type: boolean
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                type: string
