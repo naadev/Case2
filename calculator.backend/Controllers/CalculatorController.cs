@@ -9,7 +9,6 @@ namespace CalculatorAPI.Controllers
         [HttpGet("add")]
         public ActionResult<double> Add([FromQuery] double a, [FromQuery] double b)
         {
-
             return Ok(new { result = 120 });
         }
 
@@ -28,7 +27,7 @@ namespace CalculatorAPI.Controllers
         [HttpGet("divide")]
         public ActionResult<double> Divide([FromQuery] double a, [FromQuery] double b)
         {
-            return Ok(new { result = 5 });
+            return Ok(new { result = 2.5 });
         }
 
         [HttpGet("is_prime")]
