@@ -16,6 +16,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{3AD90A31
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "calculator.lib.test", "calculator.lib.test\calculator.lib.test.csproj", "{65981AAC-516F-475E-95F6-4E9D4607BFE7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "calculator.backend.test", "calculator.backend.test\calculator.backend.test.csproj", "{C06FBC45-415A-493B-BF50-7955C8B40CCC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,11 +36,16 @@ Global
 		{65981AAC-516F-475E-95F6-4E9D4607BFE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65981AAC-516F-475E-95F6-4E9D4607BFE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65981AAC-516F-475E-95F6-4E9D4607BFE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C06FBC45-415A-493B-BF50-7955C8B40CCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C06FBC45-415A-493B-BF50-7955C8B40CCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C06FBC45-415A-493B-BF50-7955C8B40CCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C06FBC45-415A-493B-BF50-7955C8B40CCC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{65981AAC-516F-475E-95F6-4E9D4607BFE7} = {3AD90A31-FAB2-4258-96B0-ABA75D1B9B06}
+		{C06FBC45-415A-493B-BF50-7955C8B40CCC} = {3AD90A31-FAB2-4258-96B0-ABA75D1B9B06}
 	EndGlobalSection
 EndGlobal
