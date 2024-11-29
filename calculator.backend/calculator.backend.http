@@ -1,6 +1,6 @@
 @calculator.backend_HostAddress = http://localhost:5242
 
-GET {{calculator.backend_HostAddress}}/weatherforecast/
+GET {{calculator.backend_HostAddress}}/Calculator/
 Accept: application/json
 
 ###
