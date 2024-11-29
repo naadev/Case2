@@ -32,16 +32,13 @@ namespace calculator.lib.test.steps
         {
             _scenarioContext.Add("secondNumber", secondNumber);
         }
-
-        [When(@"the two numbers are added")]
-        public void WhenTheTwoNumbersAreAdded()
+        private void ApiCall(string operation)
         {
             using (var client = new HttpClient())
             {
                 var firstNumber = _scenarioContext.Get<int>("firstNumber");
                 var secondNumber = _scenarioContext.Get<int>("secondNumber");
-                var operation = "add";
-                var url = "https://calculatorbackend-mock.azurewebsites.net/api/Calculator/";
+                var url = "https://calculator-backend-master-ugr.azurewebsites.net/api/Calculator/";
                 var api_call = $"{url}{operation}?a={firstNumber}&b={secondNumber}";
                 var response = client.GetAsync(api_call).Result;
                 response.EnsureSuccessStatusCode();
@@ -51,22 +48,29 @@ namespace calculator.lib.test.steps
                 _scenarioContext.Add("result", result);
             }
         }
+
+        [When(@"the two numbers are added")]
+
+        public void WhenTheTwoNumbersAreAdded()
+        {
+            ApiCall("add");
+        }
         [When(@"I divide first number by second number")]
         public void WhenIDivideFirstNumberBySecondNumber()
         {
-            _scenarioContext.Pending();
+            ApiCall("divide");
         }
 
         [When(@"I multiply both numbers")]
         public void WhenIMultiplyBothNumbers()
         {
-            _scenarioContext.Pending();
+            ApiCall("multiply");
         }
 
         [When(@"I substract first number to second number")]
         public void WhenISubstractFirstNumberToSecondNumber()
         {
-            _scenarioContext.Pending();
+            ApiCall("sustract");
         }
 
         [Then(@"the result should be (.*)")]
