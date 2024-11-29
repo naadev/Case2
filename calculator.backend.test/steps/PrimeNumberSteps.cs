@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using TechTalk.SpecFlow;
 
@@ -18,19 +19,32 @@ namespace calculator.lib.test.steps
         [When(@"number (.*) is checked")]
         public void WhenNumberIsChecked(int number)
         {
-            _scenarioContext.Pending();
+            using (var client = new HttpClient())
+            {
+                var url = "https://calculator-backend-master-ugr.azurewebsites.net/api/Calculator/";
+                var api_call = $"{url}is_prime?number={number}";
+                var response = client.GetAsync(api_call).Result;
+                response.EnsureSuccessStatusCode();
+                var responseBody = response.Content.ReadAsStringAsync().Result;
+                var jsonDocument = JsonDocument.Parse(responseBody);
+                var result = jsonDocument.RootElement.GetProperty("result").GetBoolean();
+                _scenarioContext.Add("isPrime", result);
+            }
         }
+
 
         [Then(@"the answer to know whether is prime or not is No")]
         public void ThenTheAnswerToKnowWhetherIsPrimeOrNotIsNo()
         {
-            _scenarioContext.Pending();
+            var isPrime = _scenarioContext.Get<bool>("isPrime");
+            Assert.False(isPrime);
         }
 
         [Then(@"the answer to know whether is prime or not is Yes")]
         public void ThenTheAnswerToKnowWhetherIsPrimeOrNotIsYes()
         {
-            _scenarioContext.Pending();
+            var isPrime = _scenarioContext.Get<bool>("isPrime");
+            Assert.True(isPrime);
         }
     }
 }

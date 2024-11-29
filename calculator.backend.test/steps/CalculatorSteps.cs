@@ -70,7 +70,7 @@ namespace calculator.lib.test.steps
         [When(@"I substract first number to second number")]
         public void WhenISubstractFirstNumberToSecondNumber()
         {
-            ApiCall("sustract");
+            ApiCall("subtract");
         }
 
         [Then(@"the result should be (.*)")]
