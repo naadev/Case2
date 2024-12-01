@@ -22,27 +22,48 @@ namespace calculator.frontend.Controllers
             switch (operation)
             {
                 case "Add":
-                    operation = "Add";
-                    var url = $"{base_url}/{api}/{operation}?a={num1}&b={num2}";
-                    var request = new HttpRequestMessage
                     {
-                        Method = HttpMethod.Get,
-                        RequestUri = new Uri(url),
-                    };
-                    using(var response = client.Send(request))
-                    {
-                        response.EnsureSuccessStatusCode();
-                        var body = response.Content.ReadAsStringAsync().Result;
-                        var json = JObject.Parse(body);
-                        var result_json = json["result"];
-                        if (result_json != null)
+                        operation = "Add";
+                        var url = $"{base_url}/{api}/{operation}?a={num1}&b={num2}";
+                        var request = new HttpRequestMessage
                         {
-                            result = result_json.Value<double>();
+                            Method = HttpMethod.Get,
+                            RequestUri = new Uri(url),
+                        };
+                        using (var response = client.Send(request))
+                        {
+                            response.EnsureSuccessStatusCode();
+                            var body = response.Content.ReadAsStringAsync().Result;
+                            var json = JObject.Parse(body);
+                            var result_json = json["result"];
+                            if (result_json != null)
+                            {
+                                result = result_json.Value<double>();
+                            }
                         }
                     }
                     break;
                 case "Subtract":
-                    result = 0;
+                    {
+                        operation = "subtract";
+                        var url = $"{base_url}/{api}/{operation}?a={num1}&b={num2}";
+                        var request = new HttpRequestMessage
+                        {
+                            Method = HttpMethod.Get,
+                            RequestUri = new Uri(url),
+                        };
+                        using (var response = client.Send(request))
+                        {
+                            response.EnsureSuccessStatusCode();
+                            var body = response.Content.ReadAsStringAsync().Result;
+                            var json = JObject.Parse(body);
+                            var result_json = json["result"];
+                            if (result_json != null)
+                            {
+                                result = result_json.Value<double>();
+                            }
+                        }
+                    }
                     break;
                 case "Multiply":
                     result = 0;

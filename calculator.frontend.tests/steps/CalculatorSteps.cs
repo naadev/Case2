@@ -43,6 +43,13 @@ namespace calculator.frontend.tests.steps
             await page.ClickAsync("#calculateButton");
         }
 
+        [When(@"I substract first number to second number")]
+        public async Task WhenISubstractFirstNumberToSecondNumber()
+        {
+            var page = (IPage)_scenarioContext["page"];
+            await page.SelectOptionAsync("#operation", "Subtract");
+            await page.ClickAsync("#calculateButton");
+        }
         [Then(@"the result should be (.*)")]
         [Then(@"the result is (.*)")]
         public async Task ThenTheResultShouldBe(string expectedResult)
