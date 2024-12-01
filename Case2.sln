@@ -12,6 +12,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "calculator.backend", "calcu
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{3AD90A31-FAB2-4258-96B0-ABA75D1B9B06}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "calculator.frontend", "calculator.frontend\calculator.frontend.csproj", "{3BB0228E-4EEC-4739-B0DF-9855E3000FAB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "calculator.frontend.tests", "calculator.frontend.tests\calculator.frontend.tests.csproj", "{559CCE3C-9BB2-458E-B9FE-B06517E9DDBB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,11 +26,19 @@ Global
 		{0947BFB0-D0F7-4BAB-B852-302D13773FC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0947BFB0-D0F7-4BAB-B852-302D13773FC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0947BFB0-D0F7-4BAB-B852-302D13773FC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BB0228E-4EEC-4739-B0DF-9855E3000FAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BB0228E-4EEC-4739-B0DF-9855E3000FAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BB0228E-4EEC-4739-B0DF-9855E3000FAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BB0228E-4EEC-4739-B0DF-9855E3000FAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{559CCE3C-9BB2-458E-B9FE-B06517E9DDBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{559CCE3C-9BB2-458E-B9FE-B06517E9DDBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{559CCE3C-9BB2-458E-B9FE-B06517E9DDBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{559CCE3C-9BB2-458E-B9FE-B06517E9DDBB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{65981AAC-516F-475E-95F6-4E9D4607BFE7} = {3AD90A31-FAB2-4258-96B0-ABA75D1B9B06}
+		{559CCE3C-9BB2-458E-B9FE-B06517E9DDBB} = {3AD90A31-FAB2-4258-96B0-ABA75D1B9B06}
 	EndGlobalSection
 EndGlobal
