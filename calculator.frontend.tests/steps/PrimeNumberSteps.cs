@@ -21,7 +21,8 @@ namespace calculator.frontend.tests.steps
         public async Task WhenNumberIsChecked(int number)
         {
             IPage page = _scenarioContext.Get<IPage>("page");
-            await page.GotoAsync("https://calculator-frontend-master-ugr.azurewebsites.net/Attribute");
+            var base_url = _scenarioContext.Get<string>("base_url");
+            await page.GotoAsync($"https://{base_url}/Attribute");
             await page.FillAsync("#number", number.ToString());
             await page.ClickAsync("#attribute");
         }

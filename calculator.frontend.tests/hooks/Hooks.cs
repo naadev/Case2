@@ -28,6 +28,8 @@ namespace calculator.frontend.tests.hooks
 
             var page = await context.NewPageAsync();
             _scenarioContext.Add("page",page);
+            //_scenarioContext.Add("base_url", "calculator-frontend-master-ugr.azurewebsites.net");
+            _scenarioContext.Add("base_url", "localhost:7297");
         }
     }
 }

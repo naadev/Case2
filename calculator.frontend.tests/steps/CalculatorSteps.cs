@@ -23,7 +23,8 @@ namespace calculator.frontend.tests.steps
         public async Task GivenTheFirstNumberIs(int number1)
         {
             IPage page = _scenarioContext.Get<IPage>("page");
-            await page.GotoAsync("https://calculator-frontend-master-ugr.azurewebsites.net/Calculator");
+            var base_url = _scenarioContext.Get<string>("base_url");
+            await page.GotoAsync($"https://{base_url}/Calculator");
             await page.FillAsync("#firstNumber", number1.ToString());
         }
 
