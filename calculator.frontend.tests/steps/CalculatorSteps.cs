@@ -50,13 +50,35 @@ namespace calculator.frontend.tests.steps
             await page.SelectOptionAsync("#operation", "Subtract");
             await page.ClickAsync("#calculateButton");
         }
+
+        [When(@"I multiply both numbers")]
+        public async Task WhenIMultiplyBothNumbers()
+        {
+            var page = (IPage)_scenarioContext["page"];
+            await page.SelectOptionAsync("#operation", "Multiply");
+            await page.ClickAsync("#calculateButton");
+        }
+
+
+        [When(@"I divide first number by second number")]
+        public async Task WhenIDivideFirstNumberBySecondNumber()
+        {
+            var page = (IPage)_scenarioContext["page"];
+            await page.SelectOptionAsync("#operation", "Divide");
+            await page.ClickAsync("#calculateButton");
+        }
         [Then(@"the result should be (.*)")]
         [Then(@"the result is (.*)")]
+        [Then(@"the result shall be (.*)")]
         public async Task ThenTheResultShouldBe(string expectedResult)
         {
             var page = (IPage)_scenarioContext["page"];
             var resultText = await page.InnerTextAsync("#result");
-            Assert.Equal(expectedResult, resultText);
+            var americanDouble = expectedResult.Replace(",",".");
+            var latinDouble = expectedResult.Replace(".", ",");
+            var ok = expectedResult.Equals(americanDouble) || 
+                expectedResult.Equals(latinDouble);
+            Assert.True(ok, $"expected {expectedResult} but actual {resultText}");
         }
     }
 }

@@ -40,30 +40,7 @@ namespace calculator.frontend.Controllers
         {
             double num1 = Convert.ToDouble(firstNumber);
             double num2 = Convert.ToDouble(secondNumber);
-            double result = 0;
-            switch (operation)
-            {
-                case "Add":
-                    {
-                        operation = "add";
-                        result = ExecuteOperation(operation, num1, num2);
-                    }
-                    break;
-                case "Subtract":
-                    {
-                        operation = "subtract";
-                        result = ExecuteOperation(operation, num1, num2);
-                    }
-                    break;
-                case "Multiply":
-                    result = 0;
-                    break;
-                case "Divide":
-                    result = 0;
-                    break;
-            }
-
-            ViewBag.Result = result;
+            ViewBag.Result = ExecuteOperation(operation.ToLower(), num1, num2);
             return View();
         }
     }
