@@ -9,7 +9,7 @@ namespace calculator.frontend.Controllers
         {
             return View();
         }
-        const string base_url = "https://calculatorbackend-mock.azurewebsites.net";
+        const string base_url = "https://calculator-backend-master-ugr.azurewebsites.net";
         private string ExecuteOperation(string number)
         {
             bool? result =  null;
