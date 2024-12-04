@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace calculator.lib.test
+namespace calculator.backend.test
 {
     using TechTalk.SpecFlow;
     using System;
@@ -31,7 +31,7 @@ namespace calculator.lib.test
 #line 1 "PrimeNumber.feature"
 #line hidden
         
-        public PrimeNumberFeature(PrimeNumberFeature.FixtureData fixtureData, calculator_lib_test_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public PrimeNumberFeature(PrimeNumberFeature.FixtureData fixtureData, calculator_backend_test_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
